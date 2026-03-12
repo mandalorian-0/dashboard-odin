@@ -49,9 +49,9 @@
     --slate-blue: #1992d4;
     --slate-orange: #f0b429;
     --slate-gray: #e2e8f0;
-    --slate-gray-700: #909090;
     --slate-gray-800: #e2e8f0;
     --white: #fff;
+    --gray: hsla(0, 0%, 0%, 0.331);
 
     --sidebar-bg-color: var(--slate-blue);
     --sidebar-icon-color: var(--white);
@@ -59,12 +59,12 @@
     --base-font: 'Roboto';
 
     --header-bg: var(--white);
-    --header-input-bg: var(--slate-gray-700);
+    --header-input-bg: var(--slate-gray-800);
 
-    --main-setion-bg: var(--slate-gray-700);
+    --main-setion-bg: var(--slate-gray-800);
 
     --card-bg: var(--white);
-    --card-desc-color: var(--slate-gray-700);
+    --card-desc-color: var(--gray);
 
 }
 
@@ -113,10 +113,15 @@ svg {
 .sidebar__heading {
     grid-template-columns: 4rem 1fr;
 
+    & svg, span {
+        align-self: center;
+    }
+
     & span {
         font-size: calc(30 / 16 * 1rem);
         font-weight: 600;
-        align-self: center;
+
+        color: #fff;
     }
 
     & svg {
@@ -137,6 +142,7 @@ svg {
         & a {
             font-weight: 700;
             font-size: calc(20 / 16 * 1rem);
+            align-self: center;
         }
 
         & svg {
@@ -150,7 +156,7 @@ svg {
 /* ======================================================================= */
 
 .header {
-    grid-column: 2 / 3;
+    grid-column: 2 / -1;
     grid-row: 1;
 
     display: grid;
@@ -264,3 +270,52 @@ svg {
 /* ============================= MAIN ==================================== */
 /* ======================================================================= */
 
+.content {
+    grid-column: 2 / -1;
+    grid-row: 2;
+    background-color: var(--main-setion-bg);
+
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+    gap: calc(25 / 16 * 1rem);
+
+    padding: calc(20 / 16 * 1rem) calc(30 / 16 * 1rem);
+
+    & .side {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, 1fr);
+
+        & h2 {
+            align-self: center;
+            background-color: #f0b429;
+        }
+
+        & .articles {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: calc(20 / 16 * 1rem);
+
+
+            & .card {
+                display: grid;
+                grid-template-columns: 1fr;
+
+                background-color: var(--card-bg);
+                border-left: 7px solid var(--slate-orange);
+                padding: calc(20 / 16 * 1rem);
+                border-radius: 5px;
+
+                & p {
+                    color: var(--card-desc-color);
+                }
+
+                & .action-btn {
+                    display: grid;
+                    grid-template-columns: repeat(auto-fill, minmax(40px, 1fr));
+                    /* grid-template-columns: repeat(3, 100px); */
+                    align-items: center;
+                }
+            }
+        }
+    }
+}
