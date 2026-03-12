@@ -1,3 +1,5 @@
+@import url('./reset.css');
+
 /* roboto-regular - latin */
 @font-face {
   font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
@@ -23,4 +25,26 @@
   font-style: normal;
   font-weight: 900;
   src: url('../assets/fonts/roboto-v51-latin-900.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+
+:root {
+    --slate-blue: #1992d4;
+    --slate-orange: #f0b429;
+    --slate-gray: #e2e8f0;
+    --slate-gray-700: #909090;
+    --white: #fff;
+
+    --sidebar-bg-color: var(--slate-blue);
+    --sidebar-icon-color: var(--white);
+
+    --base-font: 'Roboto';
+
+    --header-bg: var(--white);
+    --header-input-bg: var(--slate-gray-700);
+
+    --main-setion-bg: var(--slate-gray-700);
+
+    --card-bg: var(--white);
+    --card-desc-color: var(--slate-gray-700);
+
 }
